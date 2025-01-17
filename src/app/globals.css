@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind utilities;
+@tailwind components;
+
+:root {
+  --background: #ffffff;
+  --foreground: #000000;
+  --primary: #2563eb;
+  --primary-color: #FF6B6B;
+  --secondary-color: #4ECDC4;
+  --background-color: #f7f9fc;
+  --text-color: #2d3748;
+}
+
+body {
+  background-color: var(--background-color);
+  /* color: var(--text-color); */
+}
+
+.stat-bar {
+  @apply w-full bg-gray-200 rounded-full h-2.5 mb-4;
+}
+
+.stat-bar-fill {
+  @apply h-2.5 rounded-full transition-all duration-500;
+}
+
+.hp-bar { @apply bg-green-500; }
+.attack-bar { @apply bg-red-500; }
+.defense-bar { @apply bg-blue-500; }
+.special-attack-bar { @apply bg-yellow-500; }
+.special-defense-bar { @apply bg-purple-500; }
+.speed-bar { @apply bg-pink-500; }
+
+@layer components {
+  .search-input {
+    @apply w-full md:w-64 p-3 border-2 border-gray-200 rounded-lg focus:outline-none transition-all duration-300 !text-black;
+    @apply focus:border-[#2563eb] focus:ring-2 focus:ring-[#2563eb] !text-black;
+  }
+}
+
+.select-input {
+  @apply w-full md:w-48 p-3 border-2 border-gray-200 rounded-lg focus:border-primary focus:ring-2 focus:ring-primary focus:outline-none transition-all duration-300 text-black;
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
